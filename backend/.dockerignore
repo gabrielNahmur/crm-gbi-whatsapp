@@ -1,0 +1,38 @@
+# Dependencies
+venv/
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# Logs
+*.log
+*.txt
+
+# Debug files
+debug_*.py
+test_*.py
+diagnose*.py
+check_*.py
+analyze_*.py
+fix_*.py
+reproduce_*.py
+subscribe_*.py
+clear_*.py
+read_*.py
+
+# Data files
+*.json
+*.db
+
+# IDE
+.vscode/
+.idea/
+
+# Git
+.git/
+.gitignore
+
+# Env files (will be mounted separately)
+.env
+.env.local

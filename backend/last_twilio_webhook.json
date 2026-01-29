@@ -1,0 +1,18 @@
+{
+  "SmsMessageSid": "SM5a9d0e8ffb8fbfe1e5c6480d3067d1c2",
+  "NumMedia": "0",
+  "ProfileName": "Gabriel Nahmur",
+  "MessageType": "text",
+  "SmsSid": "SM5a9d0e8ffb8fbfe1e5c6480d3067d1c2",
+  "WaId": "555391629874",
+  "SmsStatus": "received",
+  "Body": "nas verdade fiscal mesmo",
+  "To": "whatsapp:+14155238886",
+  "NumSegments": "1",
+  "ReferralNumMedia": "0",
+  "MessageSid": "SM5a9d0e8ffb8fbfe1e5c6480d3067d1c2",
+  "AccountSid": "ACf46575e974105131e668e3ef98110fc2",
+  "ChannelMetadata": "{\"type\":\"whatsapp\",\"data\":{\"context\":{\"ProfileName\":\"Gabriel Nahmur\",\"WaId\":\"555391629874\"}}}",
+  "From": "whatsapp:+555391629874",
+  "ApiVersion": "2010-04-01"
+}
