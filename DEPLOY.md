@@ -90,9 +90,9 @@ sudo reboot
 mkdir -p ~/apps
 cd ~/apps
 
-# Clonar repositório (substitua pela URL do seu repo)
-git clone https://github.com/SEU_USUARIO/pipeline-CRM.git
-cd pipeline-CRM
+# Clonar repositório
+git clone https://github.com/gabrielNahmur/crm-gbi-whatsapp.git
+cd crm-gbi-whatsapp
 ```
 
 **Se você não tem o projeto no GitHub ainda:**
@@ -106,7 +106,7 @@ cd pipeline-CRM
 ## PASSO 6: Configurar Variáveis de Ambiente
 
 ```bash
-cd ~/apps/pipeline-CRM/backend
+cd ~/apps/crm-gbi-whatsapp/backend
 
 # Copiar template
 cp .env.example .env
@@ -134,7 +134,7 @@ WEBHOOK_BASE_URL=http://SEU_IP_PUBLICO:8002
 ## PASSO 7: Iniciar com Docker Compose
 
 ```bash
-cd ~/apps/pipeline-CRM
+cd ~/apps/crm-gbi-whatsapp
 
 # Subir todos os containers
 docker-compose up -d --build
@@ -151,7 +151,7 @@ docker-compose logs -f
 ## PASSO 8: Criar Usuário Admin
 
 ```bash
-cd ~/apps/pipeline-CRM/backend
+cd ~/apps/crm-gbi-whatsapp/backend
 
 # Entrar no container
 docker-compose exec backend bash
@@ -185,7 +185,7 @@ Acesse no navegador:
 ## 🔄 Como Atualizar (Deploy Futuro)
 
 ```bash
-cd ~/apps/pipeline-CRM
+cd ~/apps/crm-gbi-whatsapp
 git pull
 docker-compose up -d --build
 ```
