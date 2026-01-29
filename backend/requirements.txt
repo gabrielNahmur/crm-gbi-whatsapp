@@ -1,38 +1,17 @@
-# FastAPI e servidor
-fastapi>=0.115.0
-uvicorn[standard]>=0.32.0
-python-multipart>=0.0.17
-
-# Configurações
-pydantic>=2.10.0
-pydantic-settings>=2.7.0
-python-dotenv>=1.0.1
-
-# Banco de dados
-asyncpg>=0.30.0
-sqlalchemy[asyncio]>=2.0.36
-alembic>=1.14.0
-
-# Redis
-redis>=5.2.0
-
-# OpenAI
-openai>=1.59.0
-
-# HTTP Client (para Meta API)
-httpx>=0.28.0
-
-# Autenticação
-python-jose[cryptography]>=3.3.0
-passlib[bcrypt]>=1.7.4
-bcrypt>=4.2.0
-
-# WebSocket
-websockets>=14.0
-
-# Utilitários
-python-dateutil>=2.9.0
-pytz>=2024.2
-
-# Twilio
-twilio>=9.0.0
+fastapi==0.109.0
+uvicorn==0.27.0
+sqlalchemy==2.0.25
+asyncpg==0.29.0
+alembic==1.13.1
+pydantic==2.5.3
+pydantic-settings==2.1.0
+python-dotenv==1.0.0
+httpx==0.26.0
+openai==1.10.0
+twilio==8.11.0
+redis==5.0.1
+python-multipart==0.0.6
+passlib[bcrypt]==1.7.4
+python-jose[cryptography]==3.3.0
+phonenumbers==8.13.29
+aiofiles==23.2.1
