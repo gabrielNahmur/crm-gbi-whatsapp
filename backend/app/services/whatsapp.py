@@ -67,17 +67,10 @@ class WhatsAppService:
     ) -> Dict[str, Any]:
         """
         Envia mensagem de texto via WhatsApp.
-        
-        Args:
-            to: Número do destinatário (formato: 5511999999999)
-            text: Texto da mensagem
-            reply_to_message_id: ID da mensagem para responder (opcional)
-        
-        Returns:
-            Resposta da API
         """
         # Normaliza o número de telefone brasileiro (adiciona 9 se necessário)
         to = normalize_brazilian_phone(to)
+        logger.info(f"Sending message to normalized number: {to}")
         
         payload = {
             "messaging_product": "whatsapp",
@@ -100,17 +93,11 @@ class WhatsAppService:
         components: Optional[list] = None
     ) -> Dict[str, Any]:
         """
-        Envia mensagem de template (necessário para iniciar conversas).
-        
-        Args:
-            to: Número do destinatário
-            template_name: Nome do template aprovado
-            language: Código do idioma
-            components: Componentes dinâmicos do template
-        
-        Returns:
-            Resposta da API
+        Envia mensagem de template.
         """
+        to = normalize_brazilian_phone(to)
+        logger.info(f"Sending template to normalized number: {to}")
+
         payload = {
             "messaging_product": "whatsapp",
             "to": to,
@@ -134,17 +121,11 @@ class WhatsAppService:
         caption: Optional[str] = None
     ) -> Dict[str, Any]:
         """
-        Envia mídia (imagem, vídeo, documento, áudio).
-        
-        Args:
-            to: Número do destinatário
-            media_type: Tipo de mídia (image, video, document, audio)
-            media_url: URL pública da mídia
-            caption: Legenda (opcional, apenas para image e video)
-        
-        Returns:
-            Resposta da API
+        Envia mídia.
         """
+        to = normalize_brazilian_phone(to)
+        logger.info(f"Sending media to normalized number: {to}")
+
         payload = {
             "messaging_product": "whatsapp",
             "to": to,
