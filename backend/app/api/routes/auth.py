@@ -82,8 +82,8 @@ async def get_current_agent(
     
     try:
         payload = jwt.decode(token, settings.secret_key, algorithms=[ALGORITHM])
-        agent_id: int = payload.get("sub")
-        print(f"DEBUG AUTH: Payload decoded. Sub: {agent_id}")
+        agent_id = int(payload.get("sub"))
+        print(f"DEBUG AUTH: Payload decoded. Sub: {agent_id} (Type: {type(agent_id)})")
         
         if agent_id is None:
             print("DEBUG AUTH: Agent ID is None in payload")
