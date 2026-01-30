@@ -26,7 +26,8 @@ class BotEngine:
     
     def __init__(self, db: AsyncSession, use_twilio: bool = False):
         self.db = db
-        self.use_twilio = True # FORCE TWILIO DEBUG
+        # self.use_twilio = True # REMOVED FORCE TWILIO
+        self.use_twilio = use_twilio
         logger.info(f"BotEngine init: use_twilio={self.use_twilio} (Settings: {settings.use_twilio})")
         
         # Escolhe o serviço de envio baseado na configuração
