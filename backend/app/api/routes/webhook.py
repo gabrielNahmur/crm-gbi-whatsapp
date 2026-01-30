@@ -10,6 +10,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from app.config import get_settings
 from app.database.postgres import get_db, async_session
 from app.services.bot_engine import BotEngine
+from app.services.whatsapp import normalize_brazilian_phone
 
 logger = logging.getLogger(__name__)
 router = APIRouter()
@@ -55,7 +56,12 @@ async def _process_message_background(
         try:
             message_type = message.get("type", "text")
             message_id = message.get("id") or message.get("MessageSid")
-            phone = message.get("from")
+            raw_phone = message.get("from")
+            # Normaliza telefone na entrada (converte 8 digitos p/ 9 se for BR)
+            phone = normalize_brazilian_phone(raw_phone) if raw_phone else raw_phone
+            
+            if raw_phone != phone:
+                 logger.info(f"Telefone normalizado na entrada: {raw_phone} -> {phone}")
             
             # Ajustes específicos para Twilio/Meta payload
             # (Lógica extraída de _process_message original e adaptada)
