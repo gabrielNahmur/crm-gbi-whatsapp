@@ -44,15 +44,12 @@ services:
         condition: service_healthy
       redis:
         condition: service_healthy
+    env_file:
+      - .env
     environment:
       DATABASE_URL: postgresql+asyncpg://${POSTGRES_USER:-crm_user}:${POSTGRES_PASSWORD:-crm_secret_2024}@postgres:5432/${POSTGRES_DB:-whatsapp_crm}
       REDIS_URL: redis://redis:6379/0
-      SECRET_KEY: ${SECRET_KEY:-gbi-crm-secret-key-change-in-production}
-      OPENAI_API_KEY: ${OPENAI_API_KEY}
-      TWILIO_ACCOUNT_SID: ${TWILIO_ACCOUNT_SID}
-      TWILIO_AUTH_TOKEN: ${TWILIO_AUTH_TOKEN}
-      TWILIO_WHATSAPP_NUMBER: ${TWILIO_WHATSAPP_NUMBER:-+14155238886}
-      USE_TWILIO: "true"
+      # Outras variaveis vem do .env automaticamente
     ports:
       - "8002:8000"
     healthcheck:
