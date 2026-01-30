@@ -45,6 +45,11 @@ class TwilioWhatsAppService:
             logger.error("Twilio client not initialized")
             return {"success": False, "error": "Twilio not configured"}
         
+        if to.startswith("55") and len(to) == 12:
+            # Correção para nono dígito (BR): 55 + DDD + 8num -> 55 + DDD + 9 + 8num
+            to = f"{to[:4]}9{to[4:]}"
+            logger.info(f"Número BR ajustado com nono dígito: {to}")
+
         # Formata os números para o padrão Twilio
         to_whatsapp = f"whatsapp:+{to.lstrip('+')}"
         from_whatsapp = f"whatsapp:{self.whatsapp_number}"
